@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Consciousness Portal</title>
+<title>Consciousness & Awakening Portal</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body { margin:0; font-family: Arial; background: linear-gradient(black,#111); color:white; }
@@ -9,17 +9,53 @@ h1 { text-align:center; padding:20px; }
 .grid { display:grid; gap:15px; padding:20px; }
 .card { background:#222; padding:15px; border-radius:10px; cursor:pointer; }
 .card:hover { background:#333; }
+.content { display:none; padding:20px; }
+button { padding:10px; margin:10px; }
 </style>
+<script>
+function showContent(id){
+  document.getElementById('home').style.display='none';
+  document.getElementById(id).style.display='block';
+}
+function goBack(){
+  document.querySelectorAll('.content').forEach(c=>c.style.display='none');
+  document.getElementById('home').style.display='block';
+}
+</script>
 </head>
 <body>
 
 <h1>Consciousness & Awakening Portal</h1>
 
-<div class="grid">
-<div class="card"><h3>Human Consciousness</h3><p>Explore awareness and identity.</p></div>
-<div class="card"><h3>Chakras</h3><p>Energy and emotional balance.</p></div>
-<div class="card"><h3>Awakening</h3><p>Path of clarity and growth.</p></div>
-<div class="card"><h3>Twin Flames</h3><p>Deep connections explained.</p></div>
+<div id="home" class="grid">
+<div class="card" onclick="showContent('c1')"><h3>Human Consciousness</h3><p>Understanding awareness</p></div>
+<div class="card" onclick="showContent('c2')"><h3>Body & Habits</h3><p>Foundation of life</p></div>
+<div class="card" onclick="showContent('c3')"><h3>Chakras</h3><p>Emotional balance</p></div>
+<div class="card" onclick="showContent('c4')"><h3>Awakening</h3><p>Clarity and growth</p></div>
+</div>
+
+<div id="c1" class="content">
+<button onclick="goBack()">Back</button>
+<h2>Human Consciousness</h2>
+<p>Consciousness is your ability to observe thoughts, emotions, and reality. Growth begins when you stop reacting and start observing.</p>
+</div>
+
+<div id="c2" class="content">
+<button onclick="goBack()">Back</button>
+<h2>Body & Habits</h2>
+<p>Your habits shape your life. Strong routines build clarity and discipline.</p>
+</div>
+
+<div id="c3" class="content">
+<button onclick="goBack()">Back</button>
+<h2>Chakras</h2>
+<p>Chakras represent emotional states like fear, confidence, and expression.</p>
+</div>
+
+<div id="c4" class="content">
+<button onclick="goBack()">Back</button>
+<h2>Awakening</h2>
+<p>Awakening is gradual clarity, not instant enlightenment.</p>
 </div>
 
 </body>
